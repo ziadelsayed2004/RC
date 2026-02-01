@@ -1,0 +1,273 @@
+/* ===========================================
+   RCMods Store - Layout
+   Page layouts and sections
+   =========================================== */
+
+/* ============================================
+   CONTAINERS
+   ============================================ */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.container--wide {
+    max-width: 1360px;
+    padding-left: 96px;
+    padding-right: 96px;
+}
+
+/* ============================================
+   HERO SECTION (Home Page)
+   ============================================ */
+.hero {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__container {
+    width: 100%;
+    padding: 100px var(--container-padding);
+}
+
+.hero__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--spacing-2xl);
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.hero__title {
+    margin: 0;
+}
+
+.hero__title-text {
+    display: inline-block;
+    padding-bottom: 8px;
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-black);
+    letter-spacing: -0.8px;
+    line-height: var(--line-height-tight);
+    background: var(--gradient-hero-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero__description {
+    max-width: 460px;
+    color: var(--color-text-gray);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-relaxed);
+}
+
+.hero__visual {
+    position: relative;
+    height: 520px;
+    margin-top: -40px;
+}
+
+/* ============================================
+   PRODUCT HERO SECTION (RCGram/RCWhatsapp)
+   ============================================ */
+.product-hero {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--gradient-hero-bg);
+}
+
+.product-hero__container {
+    width: 100%;
+    max-width: 1360px;
+    padding-left: 96px;
+    padding-right: 96px;
+}
+
+.product-hero__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: var(--spacing-2xl);
+}
+
+.product-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.product-hero__title {
+    margin: 0;
+}
+
+.product-hero__title-text {
+    display: inline-block;
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-black);
+    letter-spacing: -1px;
+    line-height: 1.04em;
+    background: linear-gradient(135deg, var(--color-primary-violet) 0%, var(--color-primary-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.product-hero__description {
+    max-width: 560px;
+    color: var(--color-text-muted);
+    font-size: 17.5px;
+    line-height: 1.75em;
+}
+
+.product-hero__actions {
+    display: flex;
+    margin-top: 36px;
+    gap: 22px;
+}
+
+.product-hero__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--spacing-lg);
+}
+
+.product-hero__visual img {
+    width: auto;
+    height: 500px;
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+    object-fit: contain;
+}
+
+/* ============================================
+   APPS SECTION (Product Grid)
+   ============================================ */
+.apps-section {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-3xl) 20px;
+}
+
+.apps-section__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    width: 100%;
+    max-width: var(--container-max-width);
+}
+
+/* ============================================
+   RESPONSIVE LAYOUTS
+   ============================================ */
+@media screen and (max-width: 600px) {
+    .container--wide {
+        padding: 70px 18px;
+    }
+
+    /* Hero Section - Mobile */
+    .hero {
+        min-height: auto;
+        padding: 0;
+    }
+
+    .hero__container {
+        padding: 80px 20px 0 20px;
+    }
+
+    .hero__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__title-text {
+        font-size: var(--font-size-hero);
+        line-height: 1.2em;
+    }
+
+    .hero__description {
+        max-width: 100%;
+        font-size: var(--font-size-body);
+        line-height: 1.6em;
+    }
+
+    .hero__visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        min-height: 280px;
+        max-height: 300px;
+        margin-top: 0;
+        overflow: hidden;
+    }
+
+    /* Product Hero - Mobile */
+    .product-hero__container {
+        padding: 70px 18px;
+    }
+
+    .product-hero__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .product-hero__content {
+        align-items: center;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .product-hero__title-text {
+        font-size: var(--font-size-title);
+        letter-spacing: -0.6px;
+        line-height: 1.15em;
+    }
+
+    .product-hero__description {
+        max-width: 100%;
+        font-size: 15.5px;
+        line-height: 1.65em;
+    }
+
+    .product-hero__actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 28px;
+        gap: 14px;
+    }
+
+    .product-hero__visual {
+        padding: 0;
+        margin-top: 40px;
+    }
+
+    .product-hero__visual img {
+        height: 320px;
+        border-radius: 22px;
+    }
+
+    /* Apps Section - Mobile */
+    .apps-section {
+        padding: var(--spacing-3xl) 20px var(--spacing-xl);
+    }
+}

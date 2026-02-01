@@ -1,0 +1,20 @@
+/* RCGram Product Styles */
+.product-hero__title-text {
+    background: linear-gradient(135deg, #7C4DFF 0%, #6C63FF 50%, #2196F3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.feature-card:hover {
+    border-color: #7C4DFF;
+    box-shadow: 0 20px 40px rgba(124, 77, 255, 0.2);
+}
+
+.feature-card__icon {
+    background: linear-gradient(135deg, #7C4DFF, #6C63FF);
+}
+
+.feature-card__list li::before {
+    color: #7C4DFF;
+}
