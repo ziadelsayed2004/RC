@@ -177,7 +177,7 @@
    ============================================ */
 @media screen and (max-width: 600px) {
     .container--wide {
-        padding: 70px 18px;
+        padding: 100px 18px;
     }
 
     /* Hero Section - Mobile */
@@ -223,7 +223,7 @@
 
     /* Product Hero - Mobile */
     .product-hero__container {
-        padding: 70px 18px;
+        padding: 100px 18px;
     }
 
     .product-hero__grid {
