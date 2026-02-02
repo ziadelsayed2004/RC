@@ -1,0 +1,386 @@
+:root {
+    --color-bg: #0F1115;
+    --color-purple: #7C4DFF;
+    --color-violet: #6C63FF;
+    --color-blue: #2196F3;
+    --color-white: #FFFFFF;
+    --color-gray: #9ca3af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--color-white);
+}
+
+.ads-container {
+    width: 100%;
+    max-width: 728px;
+    min-height: 90px;
+    margin: 0 auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ads-container--top {
+    margin-top: 10px;
+}
+
+.ads-container--bottom {
+    margin-bottom: 10px;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.countdown-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(124, 77, 255, 0.2), rgba(33, 150, 243, 0.2));
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--color-purple), var(--color-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--color-gray);
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.timer-wrapper {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+}
+
+.timer-circle {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.timer-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8;
+}
+
+.timer-progress {
+    fill: none;
+    stroke: url(#timerGradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--color-white);
+}
+
+.timer-label {
+    color: var(--color-gray);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.product-info {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.product-version {
+    color: var(--color-gray);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.skip-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-purple), var(--color-violet));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.skip-btn .icon-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s;
+}
+
+.skip-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(124, 77, 255, 0.4);
+}
+
+.skip-btn:hover .icon-arrow {
+    transform: translateX(4px);
+}
+
+.skip-btn.show {
+    display: inline-flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    color: var(--color-gray);
+    font-size: 11px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .timer-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .timer-number {
+        font-size: 44px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ads-container {
+        min-height: 70px;
+        padding: 8px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .countdown-container {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .timer-wrapper {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 15px;
+    }
+
+    .timer-number {
+        font-size: 40px;
+    }
+
+    .timer-label {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .product-info {
+        padding: 12px 16px;
+        margin-bottom: 15px;
+    }
+
+    .product-name {
+        font-size: 15px;
+    }
+
+    .product-version {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ads-container {
+        min-height: 60px;
+        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .countdown-container {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 12px;
+    }
+
+    .logo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .timer-wrapper {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 12px;
+    }
+
+    .timer-number {
+        font-size: 36px;
+    }
+
+    .timer-label {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .product-info {
+        padding: 10px 14px;
+        margin-bottom: 12px;
+        border-radius: 10px;
+    }
+
+    .product-name {
+        font-size: 14px;
+    }
+
+    .product-version {
+        font-size: 11px;
+    }
+
+    .skip-btn {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    .skip-btn .icon-arrow {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer {
+        padding: 10px;
+        font-size: 10px;
+    }
+}
